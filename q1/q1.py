@@ -1,20 +1,8 @@
 def rotate(current_val, direction, amount):
-    if amount > 100:
-        amount = amount % 100
     if direction == "R":
-        if current_val + amount > 99:
-            return (current_val + amount) - 100
-        
-        current_val += amount
-        return current_val
+        return (current_val + amount) % 100
     else:
-        if current_val - amount < 0:
-            return 100 - (amount - current_val)
-        
-        current_val -= amount
-        return current_val
-
-
+        return (current_val - amount) % 100
 
 def main():
     with open("./q1/input.txt", "r") as input_file:
